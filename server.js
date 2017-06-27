@@ -53,6 +53,18 @@ app.get('/bad', (req, res) => {
     errorMessage: "Unable to fillfil the route especified"
   });
 });
+
+app.get('/projects', (req, res) => {
+  res.render('projects.hbs', {
+    pageTitle: 'My Projects',
+    projects: [
+      'App Education',
+      'Course Management',
+      'Energy control'
+    ]
+  });
+});
+
 app.listen(port, () => {
   console.log(`Server has started on port ${port}`);
 });
